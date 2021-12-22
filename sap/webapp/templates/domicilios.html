@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Domicilios</title>
+</head>
+<body style="font-family: sans-serif">
+    <h1>Bienvenido a los domicilios</h1>
+    <h2>Los domicilios actuales registrados son: {{cont}}</h2>
+    <h2>Lista actual de los domicilios:</h2>
+    <a href="/agregar-domicilio" style="padding: 15px; color: white; background-color: #77dd7a; margin: 20px; text-transform: uppercase; text-decoration: none">Agregar Domicilios</a>
+    <div style="margin-top: 30px">
+        {%for domicilio in domicilios%}
+        <div style="display: flex">
+            <div style="border:1px solid black;
+            padding: 10px;
+            width: 20px;
+            display:flex;
+            background-color: #9299f6;
+            color: white;
+            font-weight: bold;
+            text-decoration:none;
+            text-transform: uppercase;
+            justify-content: center;align-items: center">{{domicilio.id}}</div>
+            <div style="border:1px solid black;padding: 10px; width: 200px;heigth: 200px; display:flex;justify-content: center;align-items: center">{{domicilio.calle}}</div>
+            <div style="border:1px solid black;padding: 10px; width: 200px;heigth: 200px; display:flex;justify-content: center;align-items: center">{{domicilio.noCalle}}</div>
+            <div style="border:1px solid black;padding: 10px; width: 200px;heigth: 200px; display:flex;justify-content: center;align-items: center">{{domicilio.pais}}</div>
+            <a style="border:1px solid black;
+            padding: 10px;
+            width: 150px;
+            display:flex;
+            background-color: #9999f6;
+            color: white;
+            font-weight: bold;
+            text-decoration:none;
+            text-transform: uppercase;
+            justify-content: center;align-items: center" href="detalle-domicilio/{{domicilio.id}}">
+                Ver Detalles
+            </a>
+            <a style="border:1px solid black;
+            padding: 10px;
+            width: 150px;
+            display:flex;
+            background-color: #f6eb69;
+            color: black;
+            font-weight: bold;
+            text-decoration:none;
+            text-transform: uppercase;
+            justify-content: center;align-items: center" href="editar-domicilio/{{domicilio.id}}">
+                Editar
+            </a>
+            <a style="border:1px solid black;
+            padding: 10px;
+            width: 150px;
+            display:flex;
+            background-color: #ff4646;
+            color: white;
+            font-weight: bold;
+            text-decoration:none;
+            text-transform: uppercase;
+            justify-content: center;align-items: center" href="eliminar-domicilio/{{domicilio.id}}">
+                Eliminar
+            </a>
+        </div>
+        {%endfor%}
+    </div>
+</body>
+</html>
